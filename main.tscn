@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0vh8jvf2sdin"]
+
+[ext_resource type="PackedScene" uid="uid://dx5wp55c6gcki" path="res://player.tscn" id="1_4omgx"]
+[ext_resource type="PackedScene" uid="uid://bi50qiafmsokk" path="res://wall.tscn" id="2_e1hiq"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_4omgx")]
+position = Vector2(133, 207)
+
+[node name="WallsSpawner" type="Node2D" parent="."]
+position = Vector2(8, 0)
+
+[node name="LeftWall" parent="WallsSpawner" instance=ExtResource("2_e1hiq")]
+
+[node name="LeftWall2" parent="WallsSpawner" instance=ExtResource("2_e1hiq")]
+position = Vector2(0, 108)
+
+[node name="LeftWall3" parent="WallsSpawner" instance=ExtResource("2_e1hiq")]
+position = Vector2(0, 180)
+
+[node name="LeftWall4" parent="WallsSpawner" instance=ExtResource("2_e1hiq")]
+position = Vector2(0, 252)
+
+[node name="LeftWall5" parent="WallsSpawner" instance=ExtResource("2_e1hiq")]
+position = Vector2(0, 324)
