@@ -1,15 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi50qiafmsokk"]
+[gd_scene load_steps=5 format=3 uid="uid://bi50qiafmsokk"]
 
+[ext_resource type="Script" path="res://scripts/wall.gd" id="1_lh7jx"]
 [ext_resource type="Texture2D" uid="uid://bw15maegu4wes" path="res://assets/aseprite/wall1.png" id="1_loiwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0khw7"]
 size = Vector2(16, 72)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahob3"]
+
 [node name="Wall" type="StaticBody2D"]
 position = Vector2(0, 36)
+collision_mask = 32768
+script = ExtResource("1_lh7jx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0khw7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_loiwl")
+
+[node name="LeftArea2D" type="Area2D" parent="."]
+position = Vector2(-18, 0)
+scale = Vector2(1, 3.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea2D"]
+shape = SubResource("RectangleShape2D_ahob3")
+
+[node name="RightArea2D" type="Area2D" parent="."]
+position = Vector2(18, 0)
+scale = Vector2(1, 3.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea2D"]
+shape = SubResource("RectangleShape2D_ahob3")
+
+[connection signal="body_entered" from="LeftArea2D" to="." method="_on_left_area_2d_body_entered"]
+[connection signal="body_entered" from="RightArea2D" to="." method="_on_right_area_2d_body_entered"]
