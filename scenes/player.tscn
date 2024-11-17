@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dx5wp55c6gcki"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_8tvi0"]
-[ext_resource type="Texture2D" uid="uid://tvc3umkd0na0" path="res://resources/aseprite/player.png" id="2_hvtnj"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_8tvi0"]
+[ext_resource type="Texture2D" uid="uid://tvc3umkd0na0" path="res://assets/aseprite/player.png" id="2_hvtnj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q5tvu"]
 radius = 13.0384

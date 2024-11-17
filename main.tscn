@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0vh8jvf2sdin"]
+[gd_scene load_steps=4 format=3 uid="uid://c0vh8jvf2sdin"]
 
-[ext_resource type="PackedScene" uid="uid://dx5wp55c6gcki" path="res://player.tscn" id="1_4omgx"]
-[ext_resource type="PackedScene" uid="uid://bi50qiafmsokk" path="res://wall.tscn" id="2_e1hiq"]
+[ext_resource type="PackedScene" uid="uid://dx5wp55c6gcki" path="res://scenes/player.tscn" id="1_4omgx"]
+[ext_resource type="Script" path="res://scripts/wall_spawner.gd" id="2_230vo"]
+[ext_resource type="PackedScene" uid="uid://bi50qiafmsokk" path="res://scenes/wall.tscn" id="2_e1hiq"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_4omgx")]
-position = Vector2(133, 207)
+position = Vector2(93, 19)
 
 [node name="WallsSpawner" type="Node2D" parent="."]
 position = Vector2(8, 0)
+script = ExtResource("2_230vo")
 
 [node name="LeftWall" parent="WallsSpawner" instance=ExtResource("2_e1hiq")]
 
